@@ -44,6 +44,10 @@
 
     <section class="biz-wrap">
       <div class="container">
+        <div class="biz-bar">
+          <h2>商家名录</h2>
+          <div class="biz-stat" id="bizStat" role="status" aria-live="polite"></div>
+        </div>
         <div class="biz-list" id="bizList"></div>
         <div class="tip">
           <b>想上榜？</b>基础收录免费。请通过<a href="../about/">关于页</a>提交商家信息（名称、分类、公开联系方式），人工核实后随下一批次上线。付费置顶会在条目上明确标注「广告」，且不影响非付费条目的展示顺序与信息完整度。
@@ -51,48 +55,77 @@
       </div>
     </section>
 
+    <section class="pub-wrap">
+      <div class="container">
+        <h2>公共服务与配套（信息索引）</h2>
+        <p class="sec-lead">下列为公开可查的公共服务与商业配套类别，仅作<strong>信息索引</strong>，不构成推荐。具体营业时间、科室设置、招生范围以各机构官方公布为准。</p>
+        <div class="pub-grid">
+          <article class="pub-card">
+            <span class="pub-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+            </span>
+            <h3>医疗</h3>
+            <p>本地有综合医疗机构提供门诊服务；科室设置与出诊安排请查机构官方渠道。跨省就医的备案与结算口径，各地执行有差异。</p>
+            <a class="pub-link" href="../articles/huaqiao-medical/">就医与异地结算核对 →</a>
+          </article>
+
+          <article class="pub-card">
+            <span class="pub-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+            </span>
+            <h3>商业配套</h3>
+            <p>花桥已有商业综合体与社区商业网点。判断一个配套是「已开业」还是「规划中」，要看招商公告与实地营业状态。</p>
+            <a class="pub-link" href="../articles/huaqiao-living-facilities/">配套是现成还是图纸上 →</a>
+          </article>
+
+          <article class="pub-card">
+            <span class="pub-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>
+            </span>
+            <h3>教育</h3>
+            <p>招生范围每年由教育主管部门公布，<strong>购房合同不等于入学资格</strong>。以当年官方口径为准，不要接受口头承诺。</p>
+            <a class="pub-link" href="../articles/huaqiao-school-query/">学区官方查询路径 →</a>
+          </article>
+
+          <article class="pub-card">
+            <span class="pub-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 7 10h3l-4 6h12l-4-6h3L12 3z"/><path d="M12 16v5"/></svg>
+            </span>
+            <h3>休闲绿地与公共空间</h3>
+            <p>花桥有多处公园与滨水绿地。分布按地图平台搜索位置即可，开放状态与开放时间建议实地确认，避免按攻略跑空。</p>
+            <a class="pub-link" href="../articles/huaqiao-area-guide/">按板块看环境与距离 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="rules-wrap">
+      <div class="container">
+        <h2>收录与商业化说明</h2>
+        <div class="rules-card">
+          <div class="rule-grid">
+            <div class="rule-item">
+              <h3>收录标准</h3>
+              <p>花桥本地（花桥经济开发区行政范围内）真实存在、具有公开经营资质的商家。收录信息来自公开渠道或商家主动提供。</p>
+            </div>
+            <div class="rule-item">
+              <h3>收费方式</h3>
+              <p>基础收录免费；付费置顶为可选增值项，且<strong>必须在条目上标注「广告」</strong>，不混淆于自然收录条目。</p>
+            </div>
+            <div class="rule-item">
+              <h3>不做什么</h3>
+              <p>本站不对商家作评价、排名或背书；不代理交易、不介入消费纠纷；不因付费改变非付费条目的信息完整度。</p>
+            </div>
+            <div class="rule-item">
+              <h3>纠错与下架</h3>
+              <p>商家或个人如发现信息有误、或要求下架，请通过<a href="../about/">关于页</a>联系本站，核实后处理。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="container">
-      <h2>公共服务与配套（信息索引）</h2>
-      <p>下列为公开可查的公共服务与商业配套类别，仅作<strong>信息索引</strong>，不构成推荐。具体营业时间、科室设置、招生范围以各机构官方公布为准。</p>
-
-      <h3>医疗</h3>
-      <ul class="directory-list">
-        <li>
-          <div class="biz-name">综合医疗机构（花桥本地）</div>
-          <div class="biz-info">本地有综合医疗机构提供门诊服务；科室设置与出诊安排请查机构官方渠道。异地就医结算的核对方法见<a href="../articles/huaqiao-medical/">就医与异地结算专题</a>。</div>
-        </li>
-      </ul>
-
-      <h3>商业配套</h3>
-      <ul class="directory-list">
-        <li>
-          <div class="biz-name">大型商业综合体 / 社区商业</div>
-          <div class="biz-info">花桥已有商业综合体与社区商业网点；营业状态请以实地与商户公示为准。判断"现成还是规划中"的方法见<a href="../articles/huaqiao-living-facilities/">配套核实专题</a>。</div>
-        </li>
-      </ul>
-
-      <h3>教育</h3>
-      <ul class="directory-list">
-        <li>
-          <div class="biz-name">公办义务教育学校 / 民办学校</div>
-          <div class="biz-info">招生范围每年由教育主管部门公布，<strong>购房合同不等于入学资格</strong>。查询路径与核查清单见<a href="../articles/huaqiao-school-query/">学区查询专题</a>。</div>
-        </li>
-      </ul>
-
-      <h3>休闲绿地与公共空间</h3>
-      <ul class="directory-list">
-        <li>
-          <div class="biz-name">公园与滨水绿地</div>
-          <div class="biz-info">花桥有多处公园与滨水绿地，分布请查地图平台按位置搜索，实地确认开放状态与开放时间。</div>
-        </li>
-      </ul>
-
-      <h2>收录与商业化说明</h2>
-      <p><strong>收录标准：</strong>花桥本地（花桥经济开发区行政范围内）真实存在、具有公开经营资质的商家。收录信息来自公开渠道或商家主动提供。</p>
-      <p><strong>收费方式：</strong>基础收录免费；付费置顶为可选增值项，且<strong>必须在条目上标注「广告」</strong>，不混淆于自然收录条目。</p>
-      <p><strong>不做什么：</strong>本站不对商家作评价、排名或背书；不代理交易、不介入消费纠纷；不因付费改变非付费条目的信息完整度。</p>
-      <p><strong>纠错与下架：</strong>商家或个人如发现信息有误、或要求下架，请通过<a href="../about/">关于页</a>联系本站，核实后处理。</p>
-
       <!-- ARTICLES:AUTO -->
       <section class="related">
         <h2>本栏目全部文章（6 篇）</h2>
@@ -135,7 +168,18 @@
       { name: "示例·房产经纪服务", cat: "房产服务", desc: "示例条目：二手房买卖与租赁服务（须核验备案资质，详见找中介核查清单）。", phone: "0512-0000 0009", feature: false }
     ];
 
+    // 卡片左侧分类徽标字：让同类卡片一眼可辨
+    var BADGE = {
+      "餐饮美食": "食", "生活服务": "生", "教育培训": "学",
+      "医疗健康": "医", "休闲娱乐": "乐", "房产服务": "房"
+    };
+
+    var PHONE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" ' +
+      'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5L17 13l4 1.5v3A3.5 3.5 0 0 1 17.5 21C10.6 20.4 4.6 14.4 4 7.5A3.5 3.5 0 0 1 6.5 3z"/></svg>';
+
     var listEl = document.getElementById("bizList");
+    var statEl = document.getElementById("bizStat");
     var filterEls = Array.prototype.slice.call(document.querySelectorAll("#filters button"));
     var current = "全部";
 
@@ -145,22 +189,33 @@
       });
     }
 
+    function telHref(p) {
+      return "tel:" + String(p).replace(/\D/g, "");
+    }
+
     function render() {
       var items = DATA.filter(function (b) {
         return current === "全部" || b.cat === current;
       });
+      if (statEl) {
+        statEl.innerHTML = "当前分类：<b>" + esc(current) + "</b> · <b>" + items.length + "</b> 条（示例数据）";
+      }
       if (items.length === 0) {
         listEl.innerHTML = '<p class="small-note">该分类暂无条目，等待商家核实入驻。</p>';
         return;
       }
       listEl.innerHTML = items.map(function (b) {
-        return '<div class="biz' + (b.feature ? " featured" : "") + '">' +
+        return '<article class="biz' + (b.feature ? " featured" : "") + '">' +
+          '<span class="biz-idx" aria-hidden="true">' + esc(BADGE[b.cat] || b.cat.charAt(0)) + '</span>' +
           '<div class="biz-body">' +
-          '<span class="tag">' + esc(b.feature ? "广告 · 置顶" : b.cat) + '</span>' +
-          '<h4>' + esc(b.name) + '</h4>' +
-          '<p>' + esc(b.desc) + '</p>' +
-          '<div class="phone">' + esc(b.phone) + '</div>' +
-          '</div></div>';
+            '<div class="biz-head">' +
+              '<h3 class="biz-name">' + esc(b.name) + '</h3>' +
+              '<span class="tag">' + esc(b.feature ? "广告 · 置顶" : b.cat) + '</span>' +
+            '</div>' +
+            '<p>' + esc(b.desc) + '</p>' +
+            '<a class="phone" href="' + esc(telHref(b.phone)) + '">' + PHONE_ICON + esc(b.phone) + '</a>' +
+          '</div>' +
+        '</article>';
       }).join("");
     }
 

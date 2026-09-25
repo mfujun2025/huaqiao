@@ -65,7 +65,11 @@ for path in all_pages:
         titles[t] = rp
 
     # 3) 内部链接
-    for attr, target in re.findall(r'(href|src)="([^"]+)"', html):
+    #    先剥离内联 <script>/<style>，否则 JS 模板字符串里的 href（如 'href="' + x + '"'）
+    #    会被正则抓出来当成断链，造成假报。
+    html_markup = re.sub(r"<script\b.*?</script>", "", html, flags=re.S | re.I)
+    html_markup = re.sub(r"<style\b.*?</style>", "", html_markup, flags=re.S | re.I)
+    for attr, target in re.findall(r'(href|src)="([^"]+)"', html_markup):
         if re.match(r"^(https?:|mailto:|tel:|data:|javascript:)", target) or target.startswith("#"):
             continue
         clean = target.split("#")[0].split("?")[0]
@@ -78,8 +82,8 @@ for path in all_pages:
             errors.append("[link] %s → 断链 %s" % (rp, target))
 
     # 4) 页内锚点
-    ids = set(re.findall(r'id="([^"]+)"', html))
-    for anchor in re.findall(r'href="#([^"]+)"', html):
+    ids = set(re.findall(r'id="([^"]+)"', html_markup))
+    for anchor in re.findall(r'href="#([^"]+)"', html_markup):
         if anchor and anchor not in ids:
             errors.append("[anchor] %s → 锚点 #%s 不存在" % (rp, anchor))
 
