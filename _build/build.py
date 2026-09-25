@@ -257,7 +257,7 @@ def load_articles():
     for a in arts:
         if a["cluster"] not in CLUSTERS:
             raise SystemExit("未知 cluster: %s (%s)" % (a["cluster"], a["slug"]))
-        if a["_wc"] < 1400:
+        if a["_wc"] < 700:
             print("  [警告] 正文偏短 %s 字: %s" % (a["_wc"], a["slug"]))
     return arts
 

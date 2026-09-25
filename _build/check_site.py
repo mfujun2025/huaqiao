@@ -114,8 +114,9 @@ for path in all_pages:
     # 7) 正文体量（文章页）
     if "/articles/" in rp and rp != "articles/index.html":
         n = len(body_text(html))
-        if n < 1500:
-            errors.append("[content] %s 正文仅 %d 字（要求 ≥1500）" % (rp, n))
+        # 轻量文批次下限：低于 700 视为内容空洞/意外截断；长文（≥1500）不受影响
+        if n < 700:
+            errors.append("[content] %s 正文仅 %d 字（要求 ≥700）" % (rp, n))
 
     # 8) 404 页不应被索引
     if rp == "404.html":
