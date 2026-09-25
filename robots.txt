@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_build/
+Disallow: /_content/
+
+Sitemap: https://xn--6yv589c.cn/sitemap.xml

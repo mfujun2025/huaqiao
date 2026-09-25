@@ -147,3 +147,176 @@ table.info-table th { background: #f5f5f0; font-weight: 600; }
   .hero .tagline { font-size: 16px; }
   .card { padding: 18px; }
 }
+
+/* ===== 文章页 / 攻略目录页（2026-09 新增） ===== */
+.article { max-width: 840px; }
+
+.breadcrumb { font-size: 13px; color: var(--c-muted); margin-bottom: 10px; }
+.breadcrumb a { color: var(--c-muted); }
+.meta-line { font-size: 13px; color: var(--c-muted); margin: -4px 0 20px; }
+
+/* 页内目录 */
+.toc {
+  background: var(--c-surface); border: 1px solid var(--c-border);
+  border-radius: var(--radius); padding: 16px 20px; margin: 24px 0;
+}
+.toc strong { display: block; font-size: 14px; margin-bottom: 8px; color: var(--c-primary-dark); }
+.toc ol { margin: 0 0 0 20px; }
+.toc li { font-size: 14px; margin-bottom: 4px; }
+.toc a { color: var(--c-text); }
+.toc a:hover { color: var(--c-primary); }
+
+/* 表格容器横滑 */
+.table-scroll { overflow-x: auto; margin: 16px 0; cursor: grab; }
+.table-scroll table.info-table { margin: 0; min-width: 460px; }
+.table-scroll table.info-table th, .table-scroll table.info-table td { font-size: 13.5px; }
+
+/* FAQ 折叠 */
+.faq { margin: 20px 0; }
+.faq details {
+  border: 1px solid var(--c-border); border-radius: var(--radius);
+  background: var(--c-surface); margin-bottom: 10px; overflow: hidden;
+}
+.faq summary {
+  padding: 12px 44px 12px 16px; cursor: pointer; font-weight: 600; font-size: 15px;
+  color: var(--c-primary-dark); list-style: none; position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+  font-size: 18px; color: var(--c-muted); font-weight: 400;
+}
+.faq details[open] summary::after { content: "\2212"; }
+.faq details[open] summary { border-bottom: 1px solid var(--c-border); background: #fafaf7; }
+.faq-a { padding: 12px 16px; }
+.faq-a p { margin: 0; font-size: 15px; }
+
+/* 相关阅读 */
+.related { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--c-border); }
+.sub-page .related h2 {
+  font-size: 18px; border-left: none; padding-left: 0; margin: 0 0 12px; color: var(--c-text);
+}
+.related ul { list-style: none; margin: 0; padding: 0; }
+.related li { padding: 8px 0; border-bottom: 1px dashed var(--c-border); font-size: 15px; }
+.related li:last-child { border-bottom: none; }
+.sub-page .related h3 { font-size: 15px; margin: 18px 0 6px; color: var(--c-primary-dark); }
+
+/* 攻略目录页：按簇分组 */
+.cluster { margin: 36px 0; }
+.sub-page .cluster h2 {
+  font-size: 20px; border-left: 3px solid var(--c-primary); padding-left: 10px;
+  margin: 0 0 16px; color: var(--c-text);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.cluster .cnt {
+  font-size: 13px; font-weight: 400; color: var(--c-muted);
+  background: #f0f0eb; padding: 2px 8px; border-radius: 10px;
+}
+.cluster .hub-link {
+  font-size: 13px; font-weight: 400; color: var(--c-primary);
+  border: 1px solid var(--c-primary); padding: 2px 10px; border-radius: 12px; margin-left: auto;
+}
+.cluster .hub-link:hover { background: var(--c-primary); color: #fff; text-decoration: none; }
+.cluster .grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.cluster .card h3 { font-size: 16px; color: var(--c-primary-dark); margin-bottom: 8px; line-height: 1.45; }
+.cluster .card p { font-size: 13.5px; color: var(--c-muted); margin-bottom: 8px; }
+.cluster .card p.kw { color: var(--c-accent); font-size: 12.5px; margin-bottom: 0; }
+
+code {
+  background: #f0f0eb; padding: 2px 6px; border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13.5px;
+}
+
+@media (max-width: 640px) {
+  .cluster .grid { grid-template-columns: 1fr; }
+  .cluster .hub-link { margin-left: 0; }
+  .faq summary { font-size: 14.5px; }
+  .table-scroll table.info-table th, .table-scroll table.info-table td { padding: 8px 10px; }
+  .sub-page .cluster h2 { font-size: 18px; }
+}
+
+/* 导航当前页 */
+.main-nav a.active { color: var(--c-primary); font-weight: 600; }
+
+/* ===== 生活黄页（结构参照 huacao-site/directory.html） ===== */
+.yp {
+  --yp-deep: #0B5D4E;
+  --yp-green: #12A38F;
+  --yp-cream: #EFEAE0;
+  --yp-gold: #C98A1B;
+}
+.sub-page.yp { padding: 0 0 60px; }
+
+.yp .page-hero {
+  background: linear-gradient(160deg, #0B5D4E 0%, #0e6b58 58%, #12A38F 145%);
+  color: #fff;
+  padding: 44px 0 34px;
+}
+.yp .page-hero .kicker {
+  display: inline-block; font-size: 12.5px; letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.16); padding: 4px 12px;
+  border-radius: 14px; margin-bottom: 14px;
+}
+.yp .page-hero h1 { font-size: 28px; margin: 0 0 10px; color: #fff; }
+.yp .page-hero .sub {
+  font-size: 14.5px; color: #d8ece7; max-width: 780px; line-height: 1.75;
+}
+.yp .page-hero .sub strong { color: #fff; }
+
+.yp .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.yp .filters button {
+  font: inherit; font-size: 14px; cursor: pointer;
+  background: rgba(255, 255, 255, 0.12); color: #eaf7f3;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 18px; padding: 6px 15px; transition: background 0.15s, color 0.15s;
+}
+.yp .filters button:hover { background: rgba(255, 255, 255, 0.22); }
+.yp .filters button.on {
+  background: var(--yp-cream); color: var(--yp-deep);
+  border-color: var(--yp-cream); font-weight: 600;
+}
+.yp .filters button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.yp .biz-wrap { padding: 32px 0 4px; }
+.yp .biz-list {
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.yp .biz {
+  background: var(--c-surface); border: 1px solid var(--c-border);
+  border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow);
+  display: flex; gap: 14px;
+}
+.yp .biz-body { flex: 1; }
+.yp .biz.featured {
+  border-color: #e8d5a8; border-left: 4px solid var(--yp-gold); background: #fffdf6;
+}
+.yp .biz .tag {
+  display: inline-block; font-size: 12px; padding: 2px 9px; border-radius: 10px;
+  background: #e8f5f1; color: var(--yp-deep); margin-bottom: 8px;
+}
+.yp .biz.featured .tag { background: #fdf1d6; color: #8a5d05; }
+.yp .biz h4 { font-size: 16.5px; margin: 0 0 6px; color: var(--c-text); }
+.yp .biz p { font-size: 13.5px; color: var(--c-muted); margin: 0 0 8px; line-height: 1.6; }
+.yp .biz .phone {
+  font-size: 14px; font-weight: 600; color: var(--yp-deep);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.yp .tip {
+  background: #e8f5f1; border: 1px solid #bfe3da; border-left: 4px solid var(--yp-green);
+  border-radius: var(--radius); padding: 14px 18px; margin-top: 24px;
+  font-size: 14px; color: #0d4c40; line-height: 1.75;
+}
+.yp .tip b { color: var(--yp-deep); }
+.yp .small-note { font-size: 14px; color: var(--c-muted); }
+.yp h3 { font-size: 16px; margin: 20px 0 8px; color: var(--c-text); }
+
+/* 目录页意图地图表里的篇数小字 */
+.cnt-lite { font-size: 12.5px; font-weight: 400; color: var(--c-muted); }
+
+@media (max-width: 640px) {
+  .yp .page-hero { padding: 32px 0 26px; }
+  .yp .page-hero h1 { font-size: 23px; }
+  .yp .biz-list { grid-template-columns: 1fr; }
+  .yp .filters button { font-size: 13.5px; padding: 6px 13px; }
+}
