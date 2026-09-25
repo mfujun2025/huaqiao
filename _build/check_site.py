@@ -48,13 +48,21 @@ for path in all_pages:
         m = re.search(pat, html, re.S)
         if not m or not m.group(1).strip():
             errors.append("[meta] %s 缺少 %s" % (rp, tag))
+    # 2) 样式表：允许外链 <link>，也允许构建时内联（见 _build/inline_css.py）
     m = re.search(r'<link rel="stylesheet" href="(.+?)"', html)
-    if not m:
-        errors.append("[meta] %s 未引用样式表" % rp)
-    else:
+    if m:
         css = os.path.normpath(os.path.join(os.path.dirname(path), m.group(1)))
         if not os.path.exists(css):
             errors.append("[meta] %s 样式表路径不存在: %s" % (rp, m.group(1)))
+    elif "<!-- CSS:INLINE -->" not in html:
+        errors.append("[meta] %s 未引用样式表（既无 <link> 也无内联块）" % rp)
+
+    # 2b) 内联 <svg> 必须自带 width/height。
+    #     尺寸若只由 CSS 提供，样式表一旦没加载（单文件预览 / 分享 / 离线打开），
+    #     SVG 会按默认宽度撑满容器，整页被巨幅图标挤爆。2026-09-25 实际踩过。
+    svg_bad = [t for t in re.findall(r"<svg\b[^>]*>", html) if not re.search(r'\swidth="', t)]
+    if svg_bad:
+        errors.append("[svg] %s 有 %d 个内联 <svg> 缺 width/height 属性" % (rp, len(svg_bad)))
 
     # 2) title 唯一
     mt = re.search(r"<title>(.+?)</title>", html, re.S)
