@@ -26,21 +26,23 @@ python -m http.server 8080
 # 浏览器访问 http://localhost:8080/
 ```
 
-## 推到 GitHub Pages 部署
+## 部署状态（已完成）
 
-1. 在 GitHub 新建仓库 `huaqiao-cn`（公开仓库）
-2. 把本目录 push 上去：
-   ```bash
-   cd huaqiao-cn
-   git init
-   git add .
-   git commit -m "init: 花桥.cn MVP"
-   git branch -M main
-   git remote add origin https://github.com/<你的用户名>/huaqiao-cn.git
-   git push -u origin main
-   ```
-3. 仓库 `Settings` → `Pages` → `Source` 选 `Deploy from a branch` → 分支 `main` / `/(root)` → Save
-4. 等 1-2 分钟，先访问 `https://<你的用户名>.github.io/huaqiao-cn/` 验证站点能开
+- 仓库：https://github.com/mfujun2025/huaqiao （`main` 分支根目录发布）
+- GitHub Pages 已启用，`build_type: legacy`，source = `main` / `/`
+- 自定义域名已设为 `xn--6yv589c.cn`（punycode），仓库根目录有 `CNAME` 文件
+- 本站点直接 push 到 `main` 即自动发布，无需构建步骤
+
+### 后续更新流程
+
+```bash
+cd huaqiao-cn
+git add .
+git commit -m "update: 说明本次改动"
+git push
+```
+
+> 本机 git 若卡在凭据交互，先 `git config credential.helper ""`，再用内嵌 token 的 remote URL + `GIT_TERMINAL_PROMPT=0` 推送。
 
 ## 绑定花桥.cn 自定义域名
 
