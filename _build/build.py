@@ -22,7 +22,7 @@ SITE = os.path.dirname(HERE)                        # huaqiao-cn/
 CONTENT = os.path.join(HERE, "_content")
 DOMAIN = "https://xn--6yv589c.cn"
 SITE_NAME = "花桥.cn"
-TODAY = "2026-09-25"
+TODAY = "2026-10-11"
 CONTACT = "mfujun@agent.qq.com"
 
 # 栏目导航（顺序即展示顺序）
